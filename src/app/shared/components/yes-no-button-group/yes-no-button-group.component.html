@@ -1,0 +1,29 @@
+<div appKm role="radiogroup" [attr.aria-labelledby]="id" class="button-group">
+  <label [attr.id]="id" class="label">{{ label }}</label>
+  <button
+    appKmItem
+    (focused)="activate(options.YES)"
+    role="radio"
+    [attr.aria-check]="value === options.YES"
+    class="button button-yes"
+    type="button"
+    [attr.tabindex]="value === options.YES || value === null ? 0 : -1"
+    [class.button-pressed]="value === options.YES"
+    (click)="activate(options.YES)"
+  >
+    Yes
+  </button>
+  <button
+    appKmItem
+    (focused)="activate(options.NO)"
+    role="radio"
+    [attr.aria-check]="value === options.NO"
+    class="button button-no"
+    type="button"
+    [class.button-pressed]="value === options.NO"
+    [attr.tabindex]="value === options.NO ? 0 : -1"
+    (click)="activate(options.NO)"
+  >
+    No
+  </button>
+</div>
